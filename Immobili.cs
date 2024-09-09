@@ -8,6 +8,7 @@ namespace GestioneImmobili
 {
     public class Immobili
     {
+        public int Codice {  get; private  set; } 
         public string Nome { get; set; }
         public string Descrizione { get; set; }
         public int Prezzo { get; set; }
