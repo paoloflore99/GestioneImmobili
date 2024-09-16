@@ -12,7 +12,11 @@
                 Console.WriteLine("descrizione immobile");
                 string descrizione = Console.ReadLine();
                 Console.WriteLine("prezzo immobile");
-                int prezzo = Convert.ToInt32(Console.ReadLine());
+                if (!int.TryParse(Console.ReadLine(), out int prezzo))
+                {
+                    Console.WriteLine("Errore: inserire un numero intero valido per il prezzo.");
+                    return;
+                }
 
                 int calcoloIva(int prezzocasa)
                 {
@@ -40,7 +44,7 @@
             }
             catch (Exception ex)
             {
-                Console.WriteLine("inserire un numero senza virgloa");
+                Console.WriteLine($"inserire un numero senza virgloa {ex.Message}");
             }
             finally
             {
